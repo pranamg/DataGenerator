@@ -122,7 +122,7 @@ def scenario_browser():
 @app.route('/set-scenario', methods=['POST'])
 def set_scenario():
     data = request.json
-    scenario = data.get('scenario')
+    scenario = data.get('scenario') # type: ignore
     # Store the scenario in session
     session['selected_scenario'] = scenario
     return jsonify({"success": True})
